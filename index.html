@@ -1,44 +1,52 @@
 <!doctype html>
 <html lang="es">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Aventura de Santis</title>
-<link rel="icon" href="favicon.ico">
-<link rel="stylesheet" href="style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Aventura de Santis</title>
+  <link rel="icon" href="favicon.ico" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-<div class="bubbles" aria-hidden="true"></div>
-<div id="screen-start" class="screen active">
-  <h1 class="title">¡Bienvenido al Fondo de Biki, Santis!</h1>
-  <button id="startBtn" class="btn primary">Comenzar juego</button>
-  <p class="hint">Activa el volumen. La música inicia automáticamente y puedes pausarla.</p>
-  <div class="controls">
-    <button id="toggleMusic" class="btn subtle">Pausar música</button>
+  <!-- Fondo con burbujas -->
+  <div class="bubbles" aria-hidden="true"></div>
+
+  <!-- PANTALLA INICIAL: debe arrancar visible -->
+  <div id="screen-start" class="screen active">
+    <h1 class="title">¡Bienvenido al Fondo de Biki, Santis!</h1>
+    <button id="startBtn" class="btn primary">Comenzar juego</button>
+    <p class="hint">Activa el volumen. La música inicia al tocar “Comenzar juego”.</p>
+    <div class="controls">
+      <button id="toggleMusic" class="btn subtle">Pausar música</button>
+    </div>
   </div>
-</div>
 
-<div id="screen-game" class="screen hidden">
-  <header class="topbar">
-    <div class="left"><strong>Aventura de Santis</strong></div>
-    <div class="right"><button id="muteBtn" class="btn subtle">🔊</button></div>
-  </header>
-  <main>
-    <p class="guide">Abre las tarjetas en orden (fila superior izquierda hacia la derecha y luego la fila inferior).</p>
-    <div class="grid" id="grid"></div>
-  </main>
-</div>
+  <!-- PANTALLA DEL JUEGO -->
+  <div id="screen-game" class="screen hidden">
+    <header class="topbar">
+      <div class="left"><strong>Aventura de Santis</strong></div>
+      <div class="right"><button id="muteBtn" class="btn subtle">🔊</button></div>
+    </header>
+    <main>
+      <p class="guide">
+        Abre las tarjetas en orden (fila superior izquierda hacia la derecha y luego la fila inferior).
+      </p>
+      <div class="grid" id="grid"></div>
+    </main>
+  </div>
 
-<div id="screen-end" class="screen hidden">
-  <h2 class="title">🎉 ¡Sorpresa, Santis!</h2>
-  <p class="final-text">Busca tu tesoro en tu habitación.</p>
-  <button id="replayBtn" class="btn primary">Volver a jugar</button>
-</div>
+  <!-- PANTALLA FINAL -->
+  <div id="screen-end" class="screen hidden">
+    <h2 class="title">🎉 ¡Sorpresa, Santis!</h2>
+    <p class="final-text">Busca tu tesoro en tu habitación.</p>
+    <button id="replayBtn" class="btn primary">Volver a jugar</button>
+  </div>
 
-<audio id="bgm" src="assets/bg_music.wav" loop></audio>
-<audio id="sfx-bubble" src="assets/bubble.wav"></audio>
-<audio id="sfx-celebrate" src="assets/celebrate.wav"></audio>
+  <!-- Audio -->
+  <audio id="bgm" src="assets/bg_music.wav" loop></audio>
+  <audio id="sfx-bubble" src="assets/bubble.wav"></audio>
+  <audio id="sfx-celebrate" src="assets/celebrate.wav"></audio>
 
-<script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
